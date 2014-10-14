@@ -38,7 +38,31 @@ boundaryField
         type            zeroGradient;
     }
 
-    #include "include/frontBackTopBottomPatches"
+    top
+    {
+    	type 		outletInlet;
+	outletValue	$internalField;
+	value		uniform 0;
+    }
+    
+    bottom
+    {
+	type            outletInlet;
+        outletValue     $internalField;
+        value           uniform 0;
+    }
+
+    front
+    {
+    	type 		empty;
+    }
+
+    back
+    {
+    	type 		empty;
+    }
+
+   // #include "include/frontBackTopBottomPatches"
 }
 
 // ************************************************************************* //

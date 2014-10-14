@@ -6,18 +6,10 @@ cd ${0%/*} || exit 1    # run from this directory
 
 # Make 3D mesh in slab of cells.
 cd cylinder_snappyHexMesh
-runApplication blockMesh
-runApplication snappyHexMesh -overwrite
+#runApplication blockMesh
+#runApplication snappyHexMesh -overwrite
 
 # Make a 2D mesh by extruding a patch and solve to steady state.
-cd ../cylinder_pimpleFoam
-runApplication extrudeMesh
-runApplication createPatch -overwrite
-cp -r 0.org 0
-runApplication decomposePar
-runParallel `getApplication` 8
-runApplication reconstructPar
-
 cd ../cylinder_Re1000
 runApplication extrudeMesh
 runApplication createPatch -overwrite
@@ -25,6 +17,7 @@ cp -r 0.org 0
 runApplication decomposePar
 runParallel `getApplication` 8
 runApplication reconstructPar
+rm -r processor*
 
 cd ../cylinder_Re500
 runApplication extrudeMesh
@@ -33,6 +26,7 @@ cp -r 0.org 0
 runApplication decomposePar
 runParallel `getApplication` 8
 runApplication reconstructPar
+rm -r processor*
 
 cd ../cylinder_Re250
 runApplication extrudeMesh
@@ -41,6 +35,7 @@ cp -r 0.org 0
 runApplication decomposePar
 runParallel `getApplication` 8
 runApplication reconstructPar
+rm -r processor*
 
 # Copy the mesh from the steady state case and map the results to a
 # mesh motion case, then solve transient.

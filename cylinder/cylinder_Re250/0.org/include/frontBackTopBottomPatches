@@ -6,9 +6,28 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-topAndBottom
+top		//AndBottom
 {
-    type slip;
+	type uniformFixedValue;
+	uniformValue tableFile;
+        tableFileCoeffs
+        {
+            fileName           "/home/jujja/OpenFOAM/root-2.3.0/run/tutorials/incompressible/pimpleFoam/cylinder/cylinder_Re250/0.org/include/data/top";    // name of data file
+            outOfBounds         repeat;       // optional out-of-bounds handling
+            interpolationScheme linear;      // optional interpolation method
+        };
+}
+
+bottom
+{
+	type uniformFixedValue;
+        uniformValue tableFile;
+        tableFileCoeffs
+        {
+            fileName           "/home/jujja/OpenFOAM/root-2.3.0/run/tutorials/incompressible/pimpleFoam/cylinder/cylinder_Re250/0.org/include/data/bottom";    // name of data file
+            outOfBounds         repeat;       // optional out-of-bounds handling
+            interpolationScheme linear;      // optional interpolation method
+        };
 }
 
 front

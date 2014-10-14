@@ -14,7 +14,7 @@ inlet //tableFile;
         {
             //dimensions          [0 0 1 0 0]; // optional dimensions
            // type
-	    fileName		 "/home/jujja/OpenFOAM/root-2.3.0/run/tutorials/incompressible/pimpleFoam/cylinder/cylinder_Re250/0.org/include/dataFile";    // name of data file
+	    fileName		 "/home/jujja/OpenFOAM/root-2.3.0/run/tutorials/incompressible/pimpleFoam/cylinder/cylinder_Re250/0.org/include/data/dataFile";    // name of data file
             outOfBounds         repeat;       // optional out-of-bounds handling
             interpolationScheme linear;      // optional interpolation method
         }

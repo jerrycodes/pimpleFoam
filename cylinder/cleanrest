@@ -5,13 +5,13 @@ cd ${0%/*} || exit 1    # run from this directory
 . $WM_PROJECT_DIR/bin/tools/CleanFunctions
 
 cd cylinder_snappyHexMesh
-cleanCase
+#cleanCase
 
 cd ../cylinder_pimpleFoam
-cleanCase
-rm -rf 0
+#cleanCase
+#rm -rf 0
 
-cd ../cylinder_Re250
+cd ../cylinder_Re1000
 cleanCase
 rm -rf 0
 
@@ -19,7 +19,7 @@ cd ../cylinder_Re500
 cleanCase
 rm -rf 0
 
-cd ../cylinder_pimpleFoam
+cd ../cylinder_Re250
 cleanCase
 rm -rf 0
 

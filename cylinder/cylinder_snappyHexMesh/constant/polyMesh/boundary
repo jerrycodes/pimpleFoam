@@ -15,46 +15,52 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-6
+7
 (
-    topAndBottom
+    top
     {
         type            patch;
-        nFaces          132;
-        startFace       187698;
+        nFaces          24;
+        startFace       134946;
+    }
+    bottom
+    {
+        type            patch;
+        nFaces          24;
+        startFace       134970;
     }
     inlet
     {
         type            patch;
-        nFaces          30;
-        startFace       187830;
+        nFaces          162;
+        startFace       134994;
     }
     outlet
     {
         type            patch;
-        nFaces          12;
-        startFace       187860;
+        nFaces          162;
+        startFace       135156;
     }
     symFront
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
-        nFaces          5184;
-        startFace       187872;
+        nFaces          4516;
+        startFace       135318;
     }
     symBack
     {
         type            symmetryPlane;
         inGroups        1(symmetryPlane);
-        nFaces          5184;
-        startFace       193056;
+        nFaces          4516;
+        startFace       139834;
     }
     wing
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          3200;
-        startFace       198240;
+        nFaces          2240;
+        startFace       144350;
     }
 )
 

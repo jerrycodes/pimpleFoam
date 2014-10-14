@@ -10,3 +10,4 @@ cp -r 0.org 0
 runApplication decomposePar
 runParallel `getApplication` 8
 runApplication reconstructPar
+rm -r processor*
