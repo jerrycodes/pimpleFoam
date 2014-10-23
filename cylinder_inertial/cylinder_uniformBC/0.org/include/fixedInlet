@@ -5,18 +5,21 @@
 |   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-FoamFile
+
+inlet //tableFile;
 {
-    version     2.0;
-    format      ascii;
-    class       uniformDimensionedVectorField;
-    location    "constant";
-    object      g;
+//	type uniformFixedValue;
+//	uniformValue tableFile;
+//        tableFileCoeffs
+//        {
+//            //dimensions          [0 0 1 0 0]; // optional dimensions
+//           // type
+//	    fileName		 "/home/jujja/OpenFOAM/root-2.3.x/run/cylinder/cylinder_Re250/0.org/include/data/dataFile"; // name of data file
+//            outOfBounds         repeat;       // optional out-of-bounds handling
+//            interpolationScheme linear;      // optional interpolation method
+//        }
+    type  fixedValue;
+    value $internalField;
 }
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-
-dimensions      [0 1 -2 0 0 0 0];
-value           ( 0 0 0 );
-
 
 // ************************************************************************* //

@@ -19,7 +19,7 @@ cd ../cylinder_Re500
 cleanCase
 rm -rf 0
 
-cd ../cylinder_pimpleFoam
+cd ../cylinder_uniformBC
 cleanCase
 rm -rf 0
 
