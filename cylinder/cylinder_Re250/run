@@ -1,0 +1,13 @@
+#!/bin/bash
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication extrudeMesh
+runApplication createPatch -overwrite
+cp -r 0.org 0
+foamJob decomposePar	#runApplication decomposePar
+#foamJob -p inertial_pimpleFoam
+#foamJob reconstructPar	#runApplication reconstructPar
+#rm -r processor*

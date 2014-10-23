@@ -1,0 +1,25 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/CleanFunctions
+
+cd cylinder_snappyHexMesh
+cleanCase
+
+cd ../cylinder_pimpleFoam
+cleanCase
+rm -rf 0
+
+cd ../cylinder_Re250
+cleanCase
+rm -rf 0
+
+cd ../cylinder_Re500
+cleanCase
+rm -rf 0
+
+cd ../cylinder_pimpleFoam
+cleanCase
+rm -rf 0
+
