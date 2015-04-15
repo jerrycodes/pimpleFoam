@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     pimpleFoam; //original_inertial_pimpleFoam;
+application     original_inertial_pimpleFoam; // pimpleFoam
 
 startFrom       startTime;
 
