@@ -10,13 +10,49 @@ FoamFile
     version     2.0;
     format      ascii;
     class       dictionary;
-    object      transportProperties;
+    location    "system";
+    object      controlDict;
 }
-
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-transportModel Newtonian;
+application     pimpleFoam; //original_inertial_pimpleFoam;
 
-nu              nu [0 2 -1 0 0 0 0] 1e-5;
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         25;
+
+deltaT          1e-3;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.10;
+
+purgeWrite      0;
+
+writeFormat     binary;
+
+writePrecision  10;
+
+writeCompression on;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable true;
+
+adjustTimeStep  no;
+
+maxCo           0.5;
+
+functions
+{
+#include "forceCoeffs"
+}
+
 
 // ************************************************************************* //

@@ -5,18 +5,18 @@
 |   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
-FoamFile
+
+inlet
 {
-    version     2.0;
-    format      ascii;
-    class       dictionary;
-    object      transportProperties;
+        type            oscillatingFixedValue;
+        refValue        uniform 1;
+        offset          -1.0;
+        amplitude       csvFile;
+	{
+		
+        frequency       constant 1;
+ //   type  fixedValue;
+ //   value $internalField;
 }
-
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-
-transportModel Newtonian;
-
-nu              nu [0 2 -1 0 0 0 0] 1e-5;
 
 // ************************************************************************* //

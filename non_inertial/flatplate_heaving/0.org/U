@@ -9,14 +9,37 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       dictionary;
-    object      transportProperties;
+    class       volVectorField;
+    location    "0";
+    object      U;
 }
-
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-transportModel Newtonian;
+#include        "include/initialConditions"
 
-nu              nu [0 2 -1 0 0 0 0] 1e-5;
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform $flowVelocity;
+
+boundaryField
+{
+    #include "include/fixedInlet"
+
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform (0 0 0);
+        value           $internalField;
+    }
+
+    wing
+    {
+        type            movingWallVelocity;
+        value           uniform (0 0 0);
+    }
+
+    #include "include/frontBackTopBottomPatches"
+}
+
 
 // ************************************************************************* //
